@@ -16,6 +16,14 @@ const categoryCards = document.querySelector('#categoryCards')
 
 const renderedCategories = document.querySelector('#renderedCategories')
 
+const itemModal = document.querySelector ('#itemModal')
+
+const itemForm = document.querySelector ('#itemForm')
+
+const itemName = document.querySelector ('#itemName')
+
+const cancelItem = document.querySelector ('#cancelItem')
+
 let categories = [];
 
 let selectedCategory = null;
@@ -100,10 +108,11 @@ renderedCategories.appendChild(categoryCard);
 
 }
 
-const itemModal = document.querySelector ('#itemModal')
-const itemForm = document.querySelector ('#itemForm')
-const itemName = document.querySelector ('#itemName')
-const cancelItem = document.querySelector ('#cancelItem')
+itemForm.addEventListener("submit", function (event)
+
+    {EventTarget.preventDefault(;)
+
+    });
 
         
 
