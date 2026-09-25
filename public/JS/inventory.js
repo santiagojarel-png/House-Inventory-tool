@@ -14,6 +14,8 @@ const cancelCategory = document.querySelector('#cancelCategory')
 
 const categoryCards = document.querySelector('#categoryCards')
 
+const renderedCategories = document.querySelector('#renderedCategories')
+
 let categories = [];
 
 function openCategoryModal() {
@@ -66,7 +68,7 @@ categoryForm.addEventListener("submit", function(event) {
 
 function renderCategories() {
 
-    categoryCards.innerHTML = "";
+    renderedCategories.innerHTML = "";
 
     categories.forEach(function(category) {
 
@@ -89,18 +91,16 @@ function renderCategories() {
 
 categoryCard.appendChild(categoryTitle);
 categoryCard.appendChild(addItemButton);
-categoryCards.appendChild(categoryCard);
+renderedCategories.appendChild(categoryCard);
 
  });
 
 }
 
-
-
 const itemModal = document.querySelector ('#itemModal')
 const itemForm = document.querySelector ('#itemForm')
 const itemName = document.querySelector ('#itemName')
-const ancelItem = document.querySelector ('#cancelItem')
+const cancelItem = document.querySelector ('#cancelItem')
 
         
 

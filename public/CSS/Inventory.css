@@ -197,12 +197,16 @@ main {
     margin-right: 2em;
 }
 
-.categorycards div {
+.category-card {
     border: solid 1px;
     border-radius: 20px;
     text-align: center;
     padding: 7rem;
 
+}
+
+#renderedCategories {
+    display: contents;
 }
 
 
