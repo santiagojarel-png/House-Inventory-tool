@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Home Page</title>
+
+            <link rel="stylesheet" href="../CSS/Inventory.css">
+            <link rel="icon" type="image/png" href="../FIles/Home1.png">
+
+            <script type="module" src="../JS/inventory.js"></script>
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <div class="logo-area">
+
+                <img src="../FIles/Home1.png" alt="Logo" class="Herologo">
+
+                <h1>Our Home Hub</h1>
+
+            </div>
+
+            <nav class="navigationlinks">
+
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="inventory.html" class="nav-link homenav">Inventory</a>
+                <a href="404.html" class="nav-link">To Do's</a>
+                <a href="404.html" class="nav-link">Places to Go</a>
+
+                <button id="logout-button">Logout</button>
+
+            </nav>
+
+        </header>
+            
+         <main class="wholepage">
+
+            <aside class="left-panel">
+
+                <div class="sidebar">
+                    <h1>Inventory</h1>
+                    <p>Organize, track and manage your household items</p>
+                </div>
+
+                <div class="inventory-categories" id="categoryList">
+
+                    <button id="allItemsBtn">All Items</button>    
+
+                </div>
+
+                <div class="filters">
+
+                    <h1>Quick Filters</h1>
+
+                </div>
+
+                <div class="filters-options">
+
+                        <button>All Items</button>
+                        <button>Available</button>
+                        <button>Low stock</button>
+                        <button>Unavailable</button>
+                        
+                </div>
+
+            </aside>
+
+            <section class="inventorypage">
+
+                <div class="row1">
+        
+                    <input type="search" id="search">
+                    <button id="addCategoryTopBtn">Add Category</button>
+                    <button id="addItemBtn">Add item</button>
+                    
+                </div>
+
+                <div class="row2">
+        
+                <h1>Your items</h1>
+                <p>View, add, and manage your household inventory.</p>
+
+                </div>
+
+                <article class="categorycards" id="categoryCards">
+
+                    <div id="card1">
+            
+                        <button id="addCategoryCardBtn">Add Category</button>
+
+                    </div>
+
+                </article>
+
+            </section>
+                
+            </main>
+
+            <!-- The Pop-up that shows up when you click add category -->
+            <dialog id="categoryModal">
+                <form id="categoryForm">
+
+                    <h2>Add Category</h2>
+
+                    <p>Create a new category for your inventory.</p>
+
+                    <label for="categoryName">Category Name</label>
+
+                    <input type="text" id="categoryName" placeholder="Example: Food">
+
+                    <div class="modal-buttons">
+                        
+                        <button type="button" id="cancelCategory">Cancel</button>
+                        <button type="submit">Add Category</button>
+                    </div>
+
+                </form>
+
+            </dialog>
+
+            <dialog id="itemModal">
+                <form id="itemForm">
+
+                    <h2>Add Item</h2>
+
+                    <p>Add a new item to this category.</p>
+
+                    <label for="itemName">Item Name</label>
+
+                    <input type="text" id="itemName" placeholder="Example: Rice">
+
+                    <div class="modal-buttons">
+                        
+                        <button type="button" id="cancelItem">Cancel</button>
+                        <button type="submit">Add Item</button>
+                    </div>
+
+                </form>
+
+            </dialog>
+
+        </body>
+
+        <footer></footer>
+
+
+        <!--
+        
+        To do's:
+        
+        - Change the Last section element to a dialog element after editing 
+        
+        
+        -->
