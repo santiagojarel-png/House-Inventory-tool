@@ -18,6 +18,8 @@ const renderedCategories = document.querySelector('#renderedCategories')
 
 let categories = [];
 
+let selectedCategory = null;
+
 function openCategoryModal() {
 
     categoryModal.showModal();
@@ -86,7 +88,8 @@ function renderCategories() {
 
         addItemButton.addEventListener("click", function () {
 
-            console.log(category);
+            selectedCategory = category;
+            itemModal.showModal();
  });
 
 categoryCard.appendChild(categoryTitle);
