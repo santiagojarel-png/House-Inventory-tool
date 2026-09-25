@@ -110,7 +110,7 @@ renderedCategories.appendChild(categoryCard);
 
 itemForm.addEventListener("submit", function (event)
 
-    {EventTarget.preventDefault(;)
+    {EventTarget.preventDefault();
 
     });
 
