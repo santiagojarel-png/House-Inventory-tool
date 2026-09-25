@@ -198,7 +198,7 @@ main {
 }
 
 .category-card {
-    border: solid 1px;
+    border: 1px solid white;
     border-radius: 20px;
     text-align: center;
     padding: 7rem;
