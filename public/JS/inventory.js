@@ -112,6 +112,8 @@ itemForm.addEventListener("submit", function (event)
 
     {event.preventDefault();
 
+    const enteredItemName = itemName.value.trim();
+
     });
 
         
