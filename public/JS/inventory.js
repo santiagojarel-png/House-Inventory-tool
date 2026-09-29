@@ -104,9 +104,7 @@ function renderCategories() {
 
  category.items.forEach(function(item) {
 
-
-
-
+    const itemElement = document.createElement("p");
 
 
         });
