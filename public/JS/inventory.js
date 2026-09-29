@@ -50,10 +50,7 @@ categoryForm.addEventListener("submit", function(event) {
 
     const enteredCategoryName = categoryName.value.trim();
 
-    if (enteredCategoryName === "") {
-
-        return;
-    }
+    if (enteredCategoryName === "") {return;}
 
     const newCategory = {
 
@@ -94,6 +91,8 @@ function renderCategories() {
 
         addItemButton.textContent="Add Item";
 
+        addItemButton.classList.add("add-item-button");
+
         addItemButton.addEventListener("click", function () {
 
             selectedCategory = category;
@@ -130,6 +129,8 @@ itemForm.addEventListener("submit", function (event)
     renderCategories();
 
     console.log(categories);
+
+    itemForm.reset();
 
     itemModal.close();
 
