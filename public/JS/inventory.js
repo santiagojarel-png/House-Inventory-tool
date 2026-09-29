@@ -127,7 +127,11 @@ itemForm.addEventListener("submit", function (event)
 
     selectedCategory.items.push(enteredItemName);
 
+    renderCategories();
+
     console.log(categories);
+
+    itemModal.close();
 
     });
 
