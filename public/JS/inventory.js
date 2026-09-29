@@ -107,6 +107,7 @@ function renderCategories() {
     const itemElement = document.createElement("p");
     itemElement.textContent = item;
 
+    categoryCard.appendChild(itemElement);
         });
 
 categoryCard.appendChild(categoryTitle);
