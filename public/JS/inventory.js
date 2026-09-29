@@ -102,6 +102,8 @@ function renderCategories() {
     
  });
 
+ categoryCard.appendChild(categoryTitle);
+
  category.items.forEach(function(item) {
 
     const itemElement = document.createElement("p");
@@ -110,7 +112,6 @@ function renderCategories() {
     categoryCard.appendChild(itemElement);
         });
 
-categoryCard.appendChild(categoryTitle);
 categoryCard.appendChild(addItemButton);
 renderedCategories.appendChild(categoryCard);
 
