@@ -136,6 +136,13 @@ itemForm.addEventListener("submit", function (event)
 
     });
 
+    cancelItem.addEventListener("click", function() {
+
+    itemModal.close();
+
+});
+
+
         
 
 // Part 2: Logout functionality
