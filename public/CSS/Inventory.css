@@ -227,10 +227,10 @@ main {
 
     width: min(90%, 420px);
 
-    padding: 0;
+    padding: 15px;
 
-    border-radius: 20px;
-    border: 2px solid black;
+    border-radius: 10px;
+    border: 1px solid black;
 
     background: #21143d;
 
@@ -287,4 +287,49 @@ main {
 .add-item-button:hover {
     transform: scale(1.05);
     transition: 0.1s;
+}
+
+#itemModal {
+
+    width: min(90%, 420px);
+
+    padding: 15px;
+
+    border-radius: 10px;
+    border: 1px solid black;
+
+    background: #21143d;
+
+    color: white;
+}
+
+#itemForm {
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+    padding: 30px;
+
+}
+
+#itemName {
+    padding:  12px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.863);
+
+    border-radius: 10px;
+
+    background-color: rgba(255, 255, 255, 0.726);
+
+    color: rgb(2, 2, 2);
+    font-size: 1rem;
+}
+
+#itemName:focus {
+    outline: 2px solid #5b4681;
+}
+
+#itemModal::backdrop {
+    background: rgba(0, 0, 0, 0.65);
 }
