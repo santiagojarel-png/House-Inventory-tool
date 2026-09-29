@@ -98,6 +98,15 @@ function renderCategories() {
 
             selectedCategory = category;
             itemModal.showModal();
+
+    category.items.forEach(function(item) {
+
+
+
+
+
+
+        });
  });
 
 categoryCard.appendChild(categoryTitle);
@@ -113,6 +122,10 @@ itemForm.addEventListener("submit", function (event)
     {event.preventDefault();
 
     const enteredItemName = itemName.value.trim();
+
+    selectedCategory.items.push(enteredItemName);
+
+    console.log(categories);
 
     });
 
