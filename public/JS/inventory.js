@@ -99,7 +99,10 @@ function renderCategories() {
             selectedCategory = category;
             itemModal.showModal();
 
-    category.items.forEach(function(item) {
+    
+ });
+
+ category.items.forEach(function(item) {
 
 
 
@@ -107,7 +110,6 @@ function renderCategories() {
 
 
         });
- });
 
 categoryCard.appendChild(categoryTitle);
 categoryCard.appendChild(addItemButton);
