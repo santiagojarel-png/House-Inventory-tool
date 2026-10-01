@@ -28,6 +28,8 @@ let categories = [];
 
 let selectedCategory = null;
 
+let currentUser = null
+
 function openCategoryModal() {
 
     categoryModal.showModal();
@@ -181,6 +183,10 @@ onAuthStateChanged(auth, function(user) {
     if (!user) {
 
         window.location.href = "index.html";
+        return;
+
+        currentUser = user;
+        console.log(currentUser.uid);
 
     }
 
