@@ -70,7 +70,6 @@ categoryForm.addEventListener("submit", function(event) {
 
     categoryModal.close();
 
-
 });
 
 function renderCategories() {
@@ -98,7 +97,6 @@ function renderCategories() {
             selectedCategory = category;
             itemModal.showModal();
 
-    
  });
 
  categoryCard.appendChild(categoryTitle);
@@ -143,6 +141,9 @@ itemForm.addEventListener("submit", function (event)
 });
 
 
+// Firebase imports
+
+import {getFirestore} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
         
 
 // Part 2: Logout functionality
@@ -171,6 +172,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
+
+const db = getFirestore(app);
 
 
 onAuthStateChanged(auth, function(user) {
