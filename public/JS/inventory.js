@@ -185,10 +185,12 @@ onAuthStateChanged(auth, function(user) {
         window.location.href = "index.html";
         return;
 
-        currentUser = user;
-        console.log(currentUser.uid);
+
 
     }
+
+currentUser = user;
+console.log(currentUser.uid);
 
 });
 
