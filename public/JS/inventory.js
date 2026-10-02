@@ -64,6 +64,8 @@ categoryForm.addEventListener("submit", function(event) {
 
     categories.push(newCategory); 
 
+    saveCategories();
+
     renderCategories();
 
     console.log(categories)
@@ -145,10 +147,10 @@ itemForm.addEventListener("submit", function (event)
 
 // Firebase imports
 
-import {getFirestore} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
-        
+import {getFirestore, doc, setDoc} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-// Part 2: Logout functionality
+
+    
 
 import { initializeApp } from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
@@ -186,17 +188,16 @@ onAuthStateChanged(auth, function(user) {
         return;
 
 
-
     }
 
 currentUser = user;
+
 console.log(currentUser.uid);
 
 });
 
 const logoutButton =
     document.getElementById("logout-button");
-
 
 logoutButton.addEventListener("click", async function() {
 
@@ -216,10 +217,11 @@ logoutButton.addEventListener("click", async function() {
 
 const header = document.querySelector('.main-header');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 1) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
+async function saveCategories() {
+
+    if(!currentUser) {
+        return;
+    }
+    
+    const userDoc = doc(db,"users", currentUser.uid)
+}
