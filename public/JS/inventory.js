@@ -149,19 +149,10 @@ itemForm.addEventListener("submit", function (event)
 
 import {getFirestore, doc, setDoc} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
-
-    
-
-import { initializeApp } from
+import {initializeApp} from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 
-import {
-    getAuth,
-    onAuthStateChanged,
-    signOut
-} from
-"https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-
+import {getAuth, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAUiAsV7mLbwgAedq6KPafjLOwrNYFKyYw",
@@ -179,14 +170,12 @@ const auth = getAuth(app);
 
 const db = getFirestore(app);
 
-
 onAuthStateChanged(auth, function(user) {
 
     if (!user) {
 
         window.location.href = "index.html";
         return;
-
 
     }
 
