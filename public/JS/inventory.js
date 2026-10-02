@@ -224,4 +224,6 @@ async function saveCategories() {
     }
     
     const userDoc = doc(db,"users", currentUser.uid)
+
+    await setDoc(userDoc, {categories: categories});
 }
