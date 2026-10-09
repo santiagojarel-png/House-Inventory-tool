@@ -115,11 +115,14 @@ function renderCategories() {
 
     removeItemButton.textContent = "Remove";
 
+    removeItemButton.addEventListener("click", function() {
+
+        console.log('Remove button clicked:', item);
+    });
+
     itemElement.appendChild(removeItemButton)
 
-        categoryCard.appendChild(itemElement);
-
-
+    categoryCard.appendChild(itemElement);
 
         });
 
