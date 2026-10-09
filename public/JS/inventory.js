@@ -147,7 +147,7 @@ itemForm.addEventListener("submit", function (event)
 
 // Firebase imports
 
-import {getFirestore, doc, setDoc} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+import {getFirestore, doc, setDoc, getDoc} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 import {initializeApp} from
 "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
@@ -184,6 +184,8 @@ currentUser = user;
 const userDoc = doc(db, "users", currentUser.uid);
 
 const snapshot = await getDoc(userDoc);
+
+console.log(snapshot.exists());
 
 console.log(currentUser.uid);
 
