@@ -170,7 +170,7 @@ const auth = getAuth(app);
 
 const db = getFirestore(app);
 
-onAuthStateChanged(auth, function(user) {
+onAuthStateChanged(auth, async function(user) {
 
     if (!user) {
 
@@ -180,6 +180,10 @@ onAuthStateChanged(auth, function(user) {
     }
 
 currentUser = user;
+
+const userDoc = doc(db, "users", currentUser.uid);
+
+const snapshot = await getDoc(userDoc);
 
 console.log(currentUser.uid);
 
