@@ -173,21 +173,26 @@ const db = getFirestore(app);
 onAuthStateChanged(auth, async function(user) {
 
     if (!user) {
-
         window.location.href = "index.html";
         return;
+    }
+
+    currentUser = user;
+
+    const userDoc = doc(db, "users", currentUser.uid);
+
+    const snapshot = await getDoc(userDoc);
+
+    if (snapshot.exists()) {
+        categories = snapshot.data().categories ?? [];
+
+        renderCategories();
 
     }
 
-currentUser = user;
+    console.log(snapshot.exists());
 
-const userDoc = doc(db, "users", currentUser.uid);
-
-const snapshot = await getDoc(userDoc);
-
-console.log(snapshot.exists());
-
-console.log(currentUser.uid);
+    console.log(currentUser.uid);
 
 });
 
