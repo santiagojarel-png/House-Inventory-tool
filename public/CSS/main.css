@@ -16,7 +16,6 @@ header {
     top: 0;
     z-index: 999;
 
-    
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -32,7 +31,6 @@ header {
     border-bottom: 1px solid rgba(29, 11, 11, 0.219);
 }
 
-
 header h1 {
     font-size: clamp(19px, 2vw, 25px);
 }
@@ -42,7 +40,6 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
 }
 .logo-area {
     display: flex;
