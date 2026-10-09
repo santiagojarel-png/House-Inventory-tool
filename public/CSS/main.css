@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    
+} 
+
+html, body {
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: sans-serif;
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px clamp(15px, 3vw, 35px);
+    background-color: rgb(40, 10, 80);
+    color: white;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(29, 11, 11, 0.219);
+}
+
+
+header h1 {
+    font-size: clamp(19px, 2vw, 25px);
+}
+
+main {
+    background-image: url(../FIles/Background2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Herologo {
+    width: clamp(45px, 5vw, 55px);
+    height: clamp(45px, 5vw, 55px);
+    object-fit: contain;
+}
+
+.navigationlinks {
+    display: flex;
+    align-items: center;
+    
+    gap: clamp(8px, 2vw, 20px);
+}
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: clamp(13px, 1.5vw, 15px);
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    padding: 8px 10px;
+
+    transition: 0.4s;
+}
+
+.nav-link:hover {
+
+    background: rgba(255, 255, 255, 0.219);
+    transform: scale(1.05);
+}
+
+.homenav {
+    border-bottom: 2px solid rgb(120, 41, 156);
+}
+
+#logout-button {
+    padding: 9px 18px;
+    border: black;
+    border-radius: 20px;
+
+    background-color: white;
+    color: purple;
+
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#logout-button:hover {
+    transform: scale(1.05);
+}
