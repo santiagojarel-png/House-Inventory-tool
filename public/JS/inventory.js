@@ -128,6 +128,8 @@ itemForm.addEventListener("submit", function (event)
 
     selectedCategory.items.push(enteredItemName);
 
+    saveCategories();
+
     renderCategories();
 
     console.log(categories);
@@ -143,7 +145,6 @@ itemForm.addEventListener("submit", function (event)
     itemModal.close();
 
 });
-
 
 // Firebase imports
 
@@ -187,7 +188,6 @@ onAuthStateChanged(auth, async function(user) {
         categories = snapshot.data().categories ?? [];
 
         renderCategories();
-
     }
 
     console.log(snapshot.exists());
@@ -210,7 +210,6 @@ logoutButton.addEventListener("click", async function() {
     } catch (error) {
 
         console.error("Logout failed:", error);
-
     }
 
 });

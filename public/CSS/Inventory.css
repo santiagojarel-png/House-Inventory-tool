@@ -75,7 +75,6 @@ main {
 
     border-radius: 8px;
 
-
     padding: 8px 10px;
     transition: 0.4s;
 }
@@ -88,6 +87,9 @@ main {
 
 .homenav {
     border-bottom: 2px solid rgb(120, 41, 156);
+
+    border-radius: 8px 8px 0 0;
+
 }
 
 #logout-button {
