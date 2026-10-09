@@ -90,7 +90,7 @@ function renderCategories() {
 
         categoryTitle.textContent = category.name;
 
-        const addItemButton = document.createElement('button')
+        const addItemButton = document.createElement('button');
 
         addItemButton.textContent="Add Item";
 
@@ -108,10 +108,21 @@ function renderCategories() {
  category.items.forEach(function(item) {
 
     const itemElement = document.createElement("p");
+
     itemElement.textContent = item;
 
-    categoryCard.appendChild(itemElement);
+    const removeItemButton = document.createElement("button")
+
+    removeItemButton.textContent = "Remove";
+
+    itemElement.appendChild(removeItemButton)
+
+        categoryCard.appendChild(itemElement);
+
+
+
         });
+
 
 categoryCard.appendChild(addItemButton);
 renderedCategories.appendChild(categoryCard);
