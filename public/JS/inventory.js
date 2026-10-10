@@ -59,7 +59,7 @@ categoryForm.addEventListener("submit", function(event) {
     name: enteredCategoryName,
 
     items: []
-
+    
     };
 
     categories.push(newCategory); 
@@ -101,7 +101,7 @@ function renderCategories() {
             selectedCategory = category;
             itemModal.showModal();
 
-        });
+    });
 
     categoryCard.appendChild(categoryTitle);
 
@@ -125,19 +125,27 @@ function renderCategories() {
 
             renderCategories();
 
-        });
-
-        itemElement.appendChild(removeItemButton)
-
-        categoryCard.appendChild(itemElement);
-
     });
+
+    itemElement.appendChild(removeItemButton)
+
+    categoryCard.appendChild(itemElement);
+
+});
 
 categoryCard.appendChild(addItemButton);
 
 const removeCategoryButton = document.createElement('button');
 
 removeCategoryButton.textContent = 'Remove Category';
+
+removeCategoryButton.addEventListener('click', function() {
+
+    const confirmed = window.confirm('Delete this category and all the items?')
+
+    console.log(confirmed);
+
+})
 
 categoryCard.appendChild(removeCategoryButton);
 
