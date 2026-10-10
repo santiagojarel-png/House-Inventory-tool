@@ -268,20 +268,21 @@ onAuthStateChanged(auth, async function(user) {
 
 });
 
-const logoutButton =
-    document.getElementById("logout-button");
+const logoutButton = document.getElementById("logout-button");
 
 logoutButton.addEventListener("click", async function() {
 
     try {
-
         await signOut(auth);
 
         window.location.href = "index.html";
 
-    } catch (error) {
+    } 
+    
+    catch (error) {
 
         console.error("Logout failed:", error);
+        
     }
 
 });
