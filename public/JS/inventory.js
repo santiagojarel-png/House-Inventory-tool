@@ -46,36 +46,6 @@ cancelCategory.addEventListener("click", function() {
 
 });
 
-categoryForm.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    const enteredCategoryName = categoryName.value.trim();
-
-    if (enteredCategoryName === "") {return;}
-
-    const newCategory = {
-
-    name: enteredCategoryName,
-
-    items: []
-    
-    };
-
-    categories.push(newCategory); 
-
-    saveCategories();
-
-    renderCategories();
-
-    console.log(categories)
-
-    categoryForm.reset();
-
-    categoryModal.close();
-
-});
-
 function renderCategories() {
 
     renderedCategories.innerHTML = "";
@@ -157,6 +127,37 @@ function renderCategories() {
 
 });
 
+categoryForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const enteredCategoryName = categoryName.value.trim();
+
+    if (enteredCategoryName === "") {return;}
+
+    const newCategory = {
+
+    name: enteredCategoryName,
+
+    items: []
+    
+    };
+
+    categories.push(newCategory); 
+
+    saveCategories();
+
+    renderCategories();
+
+    console.log(categories)
+
+    categoryForm.reset();
+
+    categoryModal.close();
+
+});
+
+
 categoryCard.appendChild(addItemButton);
 
 const removeCategoryButton = document.createElement('button');
@@ -183,6 +184,12 @@ removeCategoryButton.addEventListener('click', function() {
 })
 
 categoryCard.appendChild(removeCategoryButton);
+
+const editCategoryButton = document.createElement('button');
+
+editCategoryButton.textContent = 'Edit Category';
+
+categoryCard.appendChild(editCategoryButton);
 
 renderedCategories.appendChild(categoryCard);
 
