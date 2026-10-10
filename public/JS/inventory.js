@@ -74,99 +74,93 @@ function renderCategories() {
 
     });
 
-    categoryCard.appendChild(categoryTitle);
+        categoryCard.appendChild(categoryTitle);
 
-    category.items.forEach(function(item, index) {
+        category.items.forEach(function(item, index) {
 
-        const itemElement = document.createElement("p");
+            const itemElement = document.createElement("p");
 
-        itemElement.textContent = item;
+            itemElement.textContent = item;
 
-        const removeItemButton = document.createElement("button")
+            const removeItemButton = document.createElement("button")
 
-        removeItemButton.textContent = "Remove item";
+            removeItemButton.textContent = "Remove item";
 
-        removeItemButton.addEventListener("click", function() {
+            removeItemButton.addEventListener("click", function() {
 
-            console.log('Remove button clicked:', item, index);
+                console.log('Remove button clicked:', item, index);
 
-            category.items.splice(index, 1);
+                category.items.splice(index, 1);
+
+                saveCategories();
+
+                renderCategories();
+
+            });
+
+            itemElement.appendChild(removeItemButton);
+
+            const editItemButton = document.createElement('button');
+
+            editItemButton.textContent = 'Edit item';
+
+            editItemButton.addEventListener('click', function() {
+
+                const updateName = window.prompt('Edit item name:', item)
+
+                console.log(updateName);
+
+                if (updateName === null || updateName.trim() === '') {return;}
+
+                category.items[index] = updateName.trim();
+
+                saveCategories();
+
+                renderCategories();
+
+            });
+
+            itemElement.appendChild(editItemButton)
+
+            categoryCard.appendChild(itemElement);
+
+        });
+
+        categoryCard.appendChild(addItemButton);
+
+        const removeCategoryButton = document.createElement('button');
+
+        removeCategoryButton.textContent = 'Remove Category';
+
+        removeCategoryButton.addEventListener('click', function() {
+
+            const confirmed = window.confirm('Delete this category and all the items?')
+
+            console.log(confirmed);
+
+            if (!confirmed) {return;}
+
+            categories.splice(index, 1)
 
             saveCategories();
 
             renderCategories();
 
-    });
+        });
 
-    itemElement.appendChild(removeItemButton);
+        categoryCard.appendChild(removeCategoryButton);
 
-    const editItemButton = document.createElement('button');
+        const editCategoryButton = document.createElement('button');
 
-    editItemButton.textContent = 'Edit item';
+        editCategoryButton.textContent = 'Edit Category';
 
-    editItemButton.addEventListener('click', function() {
+        categoryCard.appendChild(editCategoryButton);
 
-        const updateName = window.prompt('Edit item name:', item)
-
-        console.log(updateName);
-
-        if (updateName === null || updateName.trim() === '') {return;}
-
-        category.items[index] = updateName.trim();
-
-        saveCategories();
-
-        renderCategories();
+        renderedCategories.appendChild(categoryCard);
 
     });
 
-
-    itemElement.appendChild(editItemButton)
-
-    categoryCard.appendChild(itemElement);
-
-});
-
-
-
-categoryCard.appendChild(addItemButton);
-
-const removeCategoryButton = document.createElement('button');
-
-removeCategoryButton.textContent = 'Remove Category';
-
-removeCategoryButton.addEventListener('click', function() {
-
-    const confirmed = window.confirm('Delete this category and all the items?')
-
-    console.log(confirmed);
-
-    if (!confirmed) {
-
-        return;
-    }
-
-    categories.splice(index, 1)
-
-    saveCategories();
-
-    renderCategories();
-
-});
-
-categoryCard.appendChild(removeCategoryButton);
-
-const editCategoryButton = document.createElement('button');
-
-editCategoryButton.textContent = 'Edit Category';
-
-categoryCard.appendChild(editCategoryButton);
-
-renderedCategories.appendChild(categoryCard);
-
- });
-
-}
+};
 
 categoryForm.addEventListener("submit", function(event) {
 
@@ -178,9 +172,9 @@ categoryForm.addEventListener("submit", function(event) {
 
     const newCategory = {
 
-    name: enteredCategoryName,
+        name: enteredCategoryName,
 
-    items: []
+        items: []
     
     };
 
@@ -198,9 +192,9 @@ categoryForm.addEventListener("submit", function(event) {
 
 });
 
-itemForm.addEventListener("submit", function (event)
-
-    {event.preventDefault();
+itemForm.addEventListener("submit", function (event) {
+    
+    event.preventDefault();
 
     const enteredItemName = itemName.value.trim();
 
@@ -216,9 +210,9 @@ itemForm.addEventListener("submit", function (event)
 
     itemModal.close();
 
-    });
+});
 
-    cancelItem.addEventListener("click", function() {
+cancelItem.addEventListener("click", function() {
 
     itemModal.close();
 
@@ -303,4 +297,4 @@ async function saveCategories() {
     const userDoc = doc(db,"users", currentUser.uid)
 
     await setDoc(userDoc, {categories: categories});
-}
+};
