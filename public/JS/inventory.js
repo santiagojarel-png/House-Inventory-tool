@@ -127,6 +127,47 @@ function renderCategories() {
 
 });
 
+
+
+categoryCard.appendChild(addItemButton);
+
+const removeCategoryButton = document.createElement('button');
+
+removeCategoryButton.textContent = 'Remove Category';
+
+removeCategoryButton.addEventListener('click', function() {
+
+    const confirmed = window.confirm('Delete this category and all the items?')
+
+    console.log(confirmed);
+
+    if (!confirmed) {
+
+        return;
+    }
+
+    categories.splice(index, 1)
+
+    saveCategories();
+
+    renderCategories();
+
+});
+
+categoryCard.appendChild(removeCategoryButton);
+
+const editCategoryButton = document.createElement('button');
+
+editCategoryButton.textContent = 'Edit Category';
+
+categoryCard.appendChild(editCategoryButton);
+
+renderedCategories.appendChild(categoryCard);
+
+ });
+
+}
+
 categoryForm.addEventListener("submit", function(event) {
 
     event.preventDefault();
@@ -156,46 +197,6 @@ categoryForm.addEventListener("submit", function(event) {
     categoryModal.close();
 
 });
-
-
-categoryCard.appendChild(addItemButton);
-
-const removeCategoryButton = document.createElement('button');
-
-removeCategoryButton.textContent = 'Remove Category';
-
-removeCategoryButton.addEventListener('click', function() {
-
-    const confirmed = window.confirm('Delete this category and all the items?')
-
-    console.log(confirmed);
-
-    if (!confirmed) {
-
-        return;
-    }
-
-    categories.splice(index, 1)
-
-    saveCategories();
-
-    renderCategories();
-
-})
-
-categoryCard.appendChild(removeCategoryButton);
-
-const editCategoryButton = document.createElement('button');
-
-editCategoryButton.textContent = 'Edit Category';
-
-categoryCard.appendChild(editCategoryButton);
-
-renderedCategories.appendChild(categoryCard);
-
- });
-
-}
 
 itemForm.addEventListener("submit", function (event)
 
