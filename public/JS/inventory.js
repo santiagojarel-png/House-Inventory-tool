@@ -139,7 +139,7 @@ function renderCategories() {
 
         const updateName = window.prompt('Edit item name:', item)
 
-        console.log('updatedName')
+        console.log(updateName)
 
     
 
