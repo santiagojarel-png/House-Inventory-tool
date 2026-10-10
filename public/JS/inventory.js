@@ -101,40 +101,46 @@ function renderCategories() {
             selectedCategory = category;
             itemModal.showModal();
 
- });
+        });
 
- categoryCard.appendChild(categoryTitle);
+    categoryCard.appendChild(categoryTitle);
 
- category.items.forEach(function(item, index) {
+    category.items.forEach(function(item, index) {
 
-    const itemElement = document.createElement("p");
+        const itemElement = document.createElement("p");
 
-    itemElement.textContent = item;
+        itemElement.textContent = item;
 
-    const removeItemButton = document.createElement("button")
+        const removeItemButton = document.createElement("button")
 
-    removeItemButton.textContent = "Remove item";
+        removeItemButton.textContent = "Remove item";
 
-    removeItemButton.addEventListener("click", function() {
+        removeItemButton.addEventListener("click", function() {
 
-        console.log('Remove button clicked:', item, index);
+            console.log('Remove button clicked:', item, index);
 
-        category.items.splice(index, 1);
+            category.items.splice(index, 1);
 
-        saveCategories();
+            saveCategories();
 
-        renderCategories();
-
-    });
-
-    itemElement.appendChild(removeItemButton)
-
-    categoryCard.appendChild(itemElement);
+            renderCategories();
 
         });
 
+        itemElement.appendChild(removeItemButton)
+
+        categoryCard.appendChild(itemElement);
+
+    });
 
 categoryCard.appendChild(addItemButton);
+
+const removeCategoryButton = document.createElement('button');
+
+removeCategoryButton.textContent = 'Remove Category';
+
+categoryCard.appendChild(removeCategoryButton);
+
 renderedCategories.appendChild(categoryCard);
 
  });
