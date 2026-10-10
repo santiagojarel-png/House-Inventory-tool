@@ -260,7 +260,7 @@ onAuthStateChanged(auth, async function(user) {
         categories = snapshot.data().categories ?? [];
 
         renderCategories();
-    }
+    };
 
     console.log(snapshot.exists());
 
