@@ -80,7 +80,7 @@ function renderCategories() {
 
     renderedCategories.innerHTML = "";
 
-    categories.forEach(function(category) {
+    categories.forEach(function(category, index) {
 
         const categoryCard = document.createElement("div");
 
@@ -144,6 +144,17 @@ removeCategoryButton.addEventListener('click', function() {
     const confirmed = window.confirm('Delete this category and all the items?')
 
     console.log(confirmed);
+
+    if (!confirmed) {
+
+        return;
+    }
+
+    categories.splice(index,1)
+
+    saveCategories();
+
+    renderCategories();
 
 })
 
