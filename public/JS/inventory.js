@@ -139,12 +139,16 @@ function renderCategories() {
 
         const updateName = window.prompt('Edit item name:', item)
 
-        console.log(updateName)
+        console.log(updateName);
 
-    
+        if updateName === null || updateName.trim() === '') {return;}
+
+        category.items[index] = updateName.trim();
+
+        renderCategories();
 
 
-    })
+    });
 
 
     itemElement.appendChild(editItemButton)
