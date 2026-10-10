@@ -118,6 +118,12 @@ function renderCategories() {
     removeItemButton.addEventListener("click", function() {
 
         console.log('Remove button clicked:', item, index);
+
+        category.items.splice(index, 1);
+
+        renderCategories();
+
+
     });
 
     itemElement.appendChild(removeItemButton)
