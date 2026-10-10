@@ -144,6 +144,8 @@ function renderCategories() {
 
         category.items[index] = updateName.trim();
 
+        saveCategories();
+
         renderCategories();
 
 
