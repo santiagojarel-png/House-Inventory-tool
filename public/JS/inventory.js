@@ -99,6 +99,7 @@ function renderCategories() {
         addItemButton.addEventListener("click", function () {
 
             selectedCategory = category;
+
             itemModal.showModal();
 
     });
@@ -127,7 +128,13 @@ function renderCategories() {
 
     });
 
-    itemElement.appendChild(removeItemButton)
+    itemElement.appendChild(removeItemButton);
+
+    const editItemButton = document.createElement('button');
+
+    editItemButton.textContent = 'Edit item';
+
+    itemElement.appendChild(editItemButton)
 
     categoryCard.appendChild(itemElement);
 
@@ -150,7 +157,7 @@ removeCategoryButton.addEventListener('click', function() {
         return;
     }
 
-    categories.splice(index,1)
+    categories.splice(index, 1)
 
     saveCategories();
 
