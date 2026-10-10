@@ -134,14 +134,13 @@ function renderCategories() {
 
     editItemButton.textContent = 'Edit item';
 
-
     editItemButton.addEventListener('click', function() {
 
         const updateName = window.prompt('Edit item name:', item)
 
         console.log(updateName);
 
-        if updateName === null || updateName.trim() === '') {return;}
+        if (updateName === null || updateName.trim() === '') {return;}
 
         category.items[index] = updateName.trim();
 
