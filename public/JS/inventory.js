@@ -121,8 +121,9 @@ function renderCategories() {
 
         category.items.splice(index, 1);
 
-        renderCategories();
+        saveCategories();
 
+        renderCategories();
 
     });
 
