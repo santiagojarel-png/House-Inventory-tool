@@ -105,7 +105,7 @@ function renderCategories() {
 
  categoryCard.appendChild(categoryTitle);
 
- category.items.forEach(function(item) {
+ category.items.forEach(function(item, index) {
 
     const itemElement = document.createElement("p");
 
@@ -113,11 +113,11 @@ function renderCategories() {
 
     const removeItemButton = document.createElement("button")
 
-    removeItemButton.textContent = "Remove";
+    removeItemButton.textContent = "Remove item";
 
     removeItemButton.addEventListener("click", function() {
 
-        console.log('Remove button clicked:', item);
+        console.log('Remove button clicked:', item, index);
     });
 
     itemElement.appendChild(removeItemButton)
