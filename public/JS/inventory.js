@@ -134,6 +134,19 @@ function renderCategories() {
 
     editItemButton.textContent = 'Edit item';
 
+
+    editItemButton.addEventListener('click', function() {
+
+        const updateName = window.prompt('Edit item name:', item)
+
+        console.log('updatedName')
+
+    
+
+
+    })
+
+
     itemElement.appendChild(editItemButton)
 
     categoryCard.appendChild(itemElement);
